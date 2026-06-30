@@ -2,27 +2,88 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Portfolio">
+    <meta name="theme-color" content="#050507">
     <title>Portfolio</title>
-    <!-- EXACT FILENAME: main.css -->
-    <link rel="stylesheet" href="../css/main.css?v=99">
+    <link rel="stylesheet" href="../css/main.css?v=104">
 </head>
 <body>
-    
-    <!-- ATMOSPHERIC BACKGROUND LAYER -->
-    <div class="bg-layer">
-        <div class="bg-base"></div>
-        <div class="glow glow-teal"></div>
-        <div class="glow glow-purple"></div>
-        <div class="glow glow-center"></div>
-        <div class="bg-noise"></div>
+    <div class="app-root">
+        <div class="background-system">
+            <div class="layer-base"></div>
+            <div class="layer-grid">
+                <div class="grid-horizontal"></div>
+                <div class="grid-vertical"></div>
+            </div>
+            <div class="aurora-system">
+                <div class="glow-wrapper glow-amber-wrapper">
+                    <div class="glow-core glow-amber-core"></div>
+                    <div class="glow-halo glow-amber-halo"></div>
+                </div>
+                <div class="glow-wrapper glow-teal-wrapper">
+                    <div class="glow-core glow-teal-core"></div>
+                    <div class="glow-halo glow-teal-halo"></div>
+                </div>
+                <div class="glow-wrapper glow-purple-wrapper">
+                    <div class="glow-core glow-purple-core"></div>
+                    <div class="glow-halo glow-purple-halo"></div>
+                </div>
+                <div class="glow-wrapper glow-blue-wrapper">
+                    <div class="glow-core glow-blue-core"></div>
+                    <div class="glow-halo glow-blue-halo"></div>
+                </div>
+                <div class="glow-wrapper glow-pink-wrapper">
+                    <div class="glow-core glow-pink-core"></div>
+                    <div class="glow-halo glow-pink-halo"></div>
+                </div>
+            </div>
+            <div class="lighting-system">
+                <div class="light-source light-top"></div>
+                <div class="light-source light-bottom"></div>
+                <div class="light-source light-left"></div>
+                <div class="light-source light-right"></div>
+            </div>
+            <div class="texture-system">
+                <svg class="svg-filters" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <filter id="filter-noise">
+                            <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/>
+                        </filter>
+                        <filter id="filter-blur-heavy">
+                            <feGaussianBlur stdDeviation="12"/>
+                        </filter>
+                        <filter id="filter-blur-light">
+                            <feGaussianBlur stdDeviation="4"/>
+                        </filter>
+                        <filter id="filter-contrast">
+                            <feComponentTransfer>
+                                <feFuncR type="linear" slope="2"/>
+                                <feFuncG type="linear" slope="2"/>
+                                <feFuncB type="linear" slope="2"/>
+                            </feComponentTransfer>
+                        </filter>
+                    </defs>
+                </svg>
+                <div class="texture-noise"></div>
+                <div class="texture-vignette"></div>
+                <div class="texture-scanlines"></div>
+                <div class="texture-grain"></div>
+            </div>
+        </div>
+        <div class="content-system">
+            <div class="content-wrapper">
+                <div class="content-inner"></div>
+            </div>
+        </div>
+        <div class="preloader-system">
+            <div class="preloader-wrapper">
+                <div class="preloader-inner"></div>
+            </div>
+        </div>
+        <div class="overlay-system"></div>
     </div>
-
-    <!-- CONTENT LAYER -->
-    <main class="content">
-        <!-- Future content goes here -->
-    </main>
-
     <script src="../js/config.js"></script>
     <script src="../js/main.js"></script>
 </body>
